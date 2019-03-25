@@ -2,11 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 const ctrlLocations = require('../controllers/locations');
-const ctrlOthers - require('../controllers/others');
+const ctrlOthers = require('../controllers/others');
 
 //Location Pages
-router.get('/', cntrlLocations.homelist);
-router.get('/location', cntrlLocations.locationInfo);
-router.get('/location/review/new', cntrlLocations.addReview);
+router.get('/', ctrlLocations.homelist);
+router.get('/location', ctrlLocations.locationInfo);
+router.get('/location/review/new', ctrlLocations.addReview);
+
+//Other Pages
+router.get('/about', ctrlOthers.about);
 
 module.exports = router;
